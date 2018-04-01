@@ -1,0 +1,22 @@
+﻿<configuration>
+  <system.serviceModel>
+    <bindings>
+      <customBinding>
+        <binding name="PollingHttpBinding_IChatServer">
+          <binaryMessageEncoding />
+          <pollingDuplex duplexMode="MultipleMessagesPerPoll" />
+          <httpTransport transferMode="StreamedResponse"
+                         maxReceivedMessageSize="2147483647"
+                         maxBufferSize="2147483647" />
+        </binding>
+      </customBinding>
+    </bindings>
+    <client>
+      <endpoint address="http://localhost:1067/ChatService.svc/polling"
+                binding="customBinding"
+                bindingConfiguration="PollingHttpBinding_IChatServer"
+                contract="ChatServer.IChatService"
+                name="PollingHttpBinding_IChatServer" />
+    </client>
+  </system.serviceModel>
+</configuration>

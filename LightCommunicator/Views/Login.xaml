@@ -1,0 +1,35 @@
+﻿<navigation:Page x:Class="LightCommunicator.Silverlight.Views.Login" 
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+           xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+           mc:Ignorable="d"
+           xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
+           d:DesignWidth="640" d:DesignHeight="480"
+           Title="Login Page">
+    <Grid x:Name="LayoutRoot">
+        <StackPanel x:Name="ContentStackPanel">
+
+            <TextBlock x:Name="HeaderText" Style="{StaticResource HeaderTextStyle}"  Text="Login"/>
+
+            <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="Login" Margin="5" />
+                <TextBox Grid.Row="0" Grid.Column="1" Width="100" Margin="5" Text="{Binding Login, Mode=TwoWay}" TextChanged="TextBox_TextChanged" />
+
+                <Button x:Name="btnConnect" Grid.Row="1" Grid.ColumnSpan="2" Margin="5" Content="Se connecter" Command="{Binding Connect}" />
+
+            </Grid>
+        </StackPanel>
+    </Grid>
+
+</navigation:Page>
